@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="智慧潮間帶巡邏與導覽機器人，結合環境感測、影像辨識、語音提醒與在地耆老智慧導覽。"
+  >
+
+  <title>潮間帶守護者｜智慧巡邏與導覽機器人</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header class="site-header">
+    <nav class="navbar">
+
+      <a class="brand" href="#home">
+        <span class="brand-icon">◉</span>
+
+        <span class="brand-text">
+          <strong>潮間帶守護者</strong>
+          <small>Intertidal Guardian</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="開啟導覽選單"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#problem">守護使命</a>
+        <a href="#features">核心功能</a>
+        <a href="#elder-guide">在地智慧</a>
+        <a href="#process">運作流程</a>
+        <a href="#future">未來計畫</a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- 首頁主視覺 -->
+    <section class="hero" id="home">
+
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+      <div class="hero-content">
+
+        <div class="hero-text">
+
+          <p class="eyebrow">
+            SMART INTERTIDAL PATROL &amp; GUIDE ROBOT
+          </p>
+
+          <h1>
+            智慧潮間帶<br>
+            <span>巡邏與導覽機器人</span>
+          </h1>
+
+          <p class="hero-description">
+            結合環境感測、影像辨識、語音提醒與在地智慧，
+            用科技守護潮間帶，讓遊客與生態和諧共存。
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#features">
+              探索機器人功能
+            </a>
+
+            <a class="button button-secondary" href="#project-data">
+              查看專案數據
+            </a>
+          </div>
+
+          <div class="hero-tags">
+            <span>生態守護</span>
+            <span>在地智慧</span>
+            <span>科技創新</span>
+            <span>永續未來</span>
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+          <div class="robot-frame">
+
+            <!-- 稍後會上傳這張機器人圖片 -->
+            <img
+              src="assets/robot.png"
+              alt="智慧潮間帶巡邏與導覽機器人"
+              class="robot-image"
+            >
+
+            <div class="scan-line"></div>
+
+            <div class="sensor-label sensor-light">
+              <span class="sensor-dot"></span>
+              光照感測
+            </div>
+
+            <div class="sensor-label sensor-sound">
+              <span class="sensor-dot"></span>
+              聲音偵測
+            </div>
+
+            <div class="sensor-label sensor-camera">
+              <span class="sensor-dot"></span>
+              影像辨識
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <a class="scroll-hint" href="#problem">
+        <span>向下探索</span>
+        <span class="scroll-arrow">⌄</span>
+      </a>
+
+    </section>
+
+
+    <!-- 潮間帶面臨的問題 -->
+    <section class="section problem-section" id="problem">
+
+      <div class="section-heading">
+        <p class="section-number">01 / MISSION</p>
+        <h2>為什麼潮間帶需要被守護？</h2>
+
+        <p>
+          潮間帶生物脆弱，遊客的無意行為，
+          也可能對牠們的棲息環境造成影響。
+        </p>
+      </div>
+
+      <div class="problem-grid">
+
+        <article class="info-card">
+          <span class="card-number">01</span>
+          <div class="card-icon">LIGHT</div>
+          <h3>強光干擾</h3>
+          <p>閃光燈與過強光線可能影響潮間帶生物作息。</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">02</span>
+          <div class="card-icon">SOUND</div>
+          <h3>噪音干擾</h3>
+          <p>喧嘩與高音量可能驚擾正在活動或躲藏的生物。</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">03</span>
+          <div class="card-icon">STEP</div>
+          <h3>踩踏與越線</h3>
+          <p>誤闖保護區域可能破壞生物棲地與潮池環境。</p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- 機器人核心功能 -->
+    <section class="section feature-section" id="features">
+
+      <div class="section-heading">
+        <p class="section-number">02 / TECHNOLOGY</p>
+        <h2>智慧巡邏核心功能</h2>
+        <p>讓機器人成為遊客與潮間帶生態之間的友善守護者。</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h3>環境感測</h3>
+          <p>偵測現場光照強度與聲音變化，掌握環境狀況。</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h3>影像辨識</h3>
+          <p>透過攝影機辨識遊客行為與保護區域狀態。</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h3>履帶巡邏</h3>
+          <p>利用履帶式底盤適應展示場域及不平整路面。</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-index">04</span>
+          <h3>語音提醒</h3>
+          <p>偵測異常時，以清楚、溫和的語音提醒遊客。</p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- 語音提醒範例 -->
+    <section class="section alert-section">
+
+      <div class="section-heading">
+        <p class="section-number">03 / FRIENDLY ALERT</p>
+        <h2>即時偵測，友善提醒</h2>
+      </div>
+
+      <div class="alert-grid">
+
+        <div class="alert-card alert-light">
+          <span>光照過強</span>
+          <strong>「請關閉閃光燈」</strong>
+        </div>
+
+        <div class="alert-card alert-sound">
+          <span>音量過大</span>
+          <strong>「請小聲一點，保護生物的家」</strong>
+        </div>
+
+        <div class="alert-card alert-boundary">
+          <span>遊客越線</span>
+          <strong>「請勿越過此區，這裡是生物們的家！」</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 在地耆老智慧導覽 -->
+    <section class="section elder-section" id="elder-guide">
+
+      <div class="elder-content">
+
+        <div class="elder-text">
+          <p class="section-number">04 / LOCAL WISDOM</p>
+          <h2>耆老智慧導覽模式</h2>
+
+          <p>
+            最熟悉潮間帶生態與地方故事的，往往是長年居住在當地的耆老。
+            機器人能作為遠端導覽媒介，協助傳遞珍貴的在地知識。
+          </p>
+
+          <p>
+            當口語表達較不清楚時，系統可以透過 AI 理解語意、
+            重組句子，再由機器人以清楚的語音向遊客播報。
+          </p>
+        </div>
+
+        <div class="elder-flow">
+
+          <div class="flow-node">
+            <span>01</span>
+            <strong>在地耆老分享</strong>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="flow-node">
+            <span>02</span>
+            <strong>AI 理解語意</strong>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="flow-node">
+            <span>03</span>
+            <strong>機器人語音導覽</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 運作流程 -->
+    <section class="section process-section" id="process">
+
+      <div class="section-heading">
+        <p class="section-number">05 / WORKFLOW</p>
+        <h2>智慧巡邏運作流程</h2>
+      </div>
+
+      <div class="process-list">
+
+        <div class="process-item">
+          <span>01</span>
+          <h3>環境感測</h3>
+          <p>接收光照、音量、距離與影像資訊。</p>
+        </div>
+
+        <div class="process-item">
+          <span>02</span>
+          <h3>智慧判斷</h3>
+          <p>判斷是否超過設定門檻或出現越線行為。</p>
+        </div>
+
+        <div class="process-item">
+          <span>03</span>
+          <h3>語音提醒</h3>
+          <p>播放符合現場情況的友善提醒。</p>
+        </div>
+
+        <div class="process-item">
+          <span>04</span>
+          <h3>事件記錄</h3>
+          <p>將事件資料提供給專案儀表板進行分析。</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 專案數據 -->
+    <section class="section data-section" id="project-data">
+
+      <div class="section-heading">
+        <p class="section-number">06 / DATA</p>
+        <h2>以數據看見守護成果</h2>
+
+        <p>
+          記錄強光、噪音、越線與巡邏事件，
+          協助團隊分析遊客行為與教育成效。
+        </p>
+      </div>
+
+      <div class="data-grid">
+
+        <div class="data-card">
+          <span class="data-value" data-target="0">0</span>
+          <small>強光事件</small>
+        </div>
+
+        <div class="data-card">
+          <span class="data-value" data-target="0">0</span>
+          <small>噪音事件</small>
+        </div>
+
+        <div class="data-card">
+          <span class="data-value" data-target="0">0</span>
+          <small>越線事件</small>
+        </div>
+
+        <div class="data-card">
+          <span class="data-value" data-target="0">0</span>
+          <small>事件總計</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 未來計畫 -->
+    <section class="section future-section" id="future">
+
+      <div class="section-heading">
+        <p class="section-number">07 / FUTURE PLAN</p>
+        <h2>守護更大的海岸線</h2>
+      </div>
+
+      <div class="future-grid">
+
+        <article>
+          <span>01</span>
+          <h3>擴增感測項目</h3>
+          <p>加入溫濕度、水質與更多影像辨識功能。</p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>擴大教育合作</h3>
+          <p>與更多學校、社區及生態保育團體合作。</p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>建立生態資料平台</h3>
+          <p>累積潮間帶環境與遊客行為資料，支持教育研究。</p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- 頁尾 -->
+  <footer class="site-footer">
+
+    <div>
+      <strong>潮間帶守護者</strong>
+      <p>智慧潮間帶巡邏與導覽機器人</p>
+    </div>
+
+    <p>
+      科技守護潮間帶，從我們做起。
+    </p>
+
+    <p class="copyright">
+      © 2026 Intertidal Guardian Project
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
