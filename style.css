@@ -1258,3 +1258,171 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =========================
+   捲動後的導覽列
+========================= */
+
+header,
+.site-header {
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+header.scrolled,
+.site-header.scrolled {
+  background: rgba(5, 28, 46, 0.92);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+
+/* =========================
+   區塊進場動畫
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   手機選單按鈕
+========================= */
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 6px 0;
+  border-radius: 2px;
+  background: #ffffff;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =========================
+   回到頂端按鈕
+========================= */
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: #3d8f8a;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #e07a5f;
+}
+
+
+/* =========================
+   手機版畫面
+========================= */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(82%, 340px);
+    height: 100vh;
+    padding: 80px 30px 40px;
+    gap: 28px;
+    background: rgba(5, 28, 46, 0.97);
+    box-shadow: -12px 0 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(18px);
+    transition: right 0.35s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* 減少動畫模式 */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.show {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
