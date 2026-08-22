@@ -15,7 +15,7 @@
 
   <title>潮間帶守護者｜智慧巡邏與導覽機器人</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css?v=3">
 </head>
 
 <body>
@@ -55,7 +55,232 @@
     </nav>
   </header>
 
+<section class="robot-evolution" id="robot-evolution">
+  <div class="section-heading">
+    <span class="section-kicker">ROBOT EVOLUTION</span>
+    <h2>從第一代到第二代</h2>
+    <p>
+      從基礎環境感測，進化為具備影像判斷、道路循跡、
+      障礙分類與即時儀表板的智慧巡邏機器人。
+    </p>
+  </div>
 
+  <div class="generation-grid">
+
+    <!-- 第一代機器人 -->
+    <article class="generation-card generation-v1">
+      <div class="generation-label">GEN 01</div>
+
+      <div class="robot-image">
+        <img
+          src="assets/robot-v1.jpg"
+          alt="第一代潮間帶巡邏機器人"
+        >
+      </div>
+
+      <div class="generation-title">
+        <div>
+          <span>第一代</span>
+          <h3>基礎環境感測原型</h3>
+        </div>
+        <span class="status-badge prototype">原型驗證</span>
+      </div>
+
+      <ol class="feature-list">
+        <li>
+          <span class="feature-number">01</span>
+          <div>
+            <h4>紅外線越線偵測</h4>
+            <p>透過紅外線感測器，判斷是否有人或物體越過警戒線。</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">02</span>
+          <div>
+            <h4>強光與噪音感測</h4>
+            <p>使用 micro:bit 偵測環境光線強度與聲音音量。</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">03</span>
+          <div>
+            <h4>雙 EV3 控制主機</h4>
+            <p>使用兩台 EV3 主機作為機器人的主要控制系統。</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">04</span>
+          <div>
+            <h4>LEGO 積木軀幹</h4>
+            <p>主要結構以 LEGO 零件組裝，方便快速調整與測試。</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">05</span>
+          <div>
+            <h4>LEGO 馬達驅動</h4>
+            <p>使用 LEGO 馬達控制四肢的仰俯角度。</p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">06</span>
+          <div>
+            <h4>單一超音波感測器</h4>
+            <p>偵測機器人前方是否存在障礙物。</p>
+          </div>
+        </li>
+      </ol>
+    </article>
+
+    <!-- 進化箭頭 -->
+    <div class="evolution-arrow" aria-hidden="true">
+      <span>全面升級</span>
+      <div>→</div>
+    </div>
+
+    <!-- 第二代機器人 -->
+    <article class="generation-card generation-v2">
+      <div class="generation-label">GEN 02</div>
+
+      <div class="robot-image">
+        <img
+          src="assets/robot-v2.jpg"
+          alt="第二代智慧潮間帶巡邏與導覽機器人"
+        >
+      </div>
+
+      <div class="generation-title">
+        <div>
+          <span>第二代</span>
+          <h3>智慧辨識巡邏系統</h3>
+        </div>
+        <span class="status-badge upgraded">智慧升級</span>
+      </div>
+
+      <ol class="feature-list">
+        <li>
+          <span class="feature-number">01</span>
+          <div>
+            <span class="change-tag upgrade">升級</span>
+            <h4>手機影像越線辨識</h4>
+            <p>
+              改用手機鏡頭辨識越線行為，並加入眨眼辨識機制。
+              偵測目標必須具有眨眼特徵，才會被判定為人員越線，
+              降低鳥類或其他移動物體造成誤報的情況。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">02</span>
+          <div>
+            <span class="change-tag retained">延續</span>
+            <h4>強光與噪音感測</h4>
+            <p>
+              延續使用 micro:bit 偵測光照與音量，
+              發現干擾行為時立即提醒遊客。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">03</span>
+          <div>
+            <span class="change-tag upgrade">升級</span>
+            <h4>雙 Matrix R4 控制主機</h4>
+            <p>
+              將 EV3 更換為兩台 Matrix R4 主機，
+              提升控制能力與感測器整合彈性。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">04</span>
+          <div>
+            <span class="change-tag upgrade">升級</span>
+            <h4>金屬結構軀幹</h4>
+            <p>
+              軀幹改用金屬零件連接，提升結構強度、
+              穩定性與整體載重能力。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">05</span>
+          <div>
+            <span class="change-tag upgrade">升級</span>
+            <h4>Matrix 馬達驅動</h4>
+            <p>
+              四肢改用 Matrix 馬達控制仰俯角度，
+              提供更強的輸出力量與穩定動作。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">06</span>
+          <div>
+            <span class="change-tag upgrade">升級</span>
+            <h4>上下雙雷射距離感測</h4>
+            <p>
+              兩組雷射距離感測器採上下配置，
+              藉由不同高度的偵測結果，判斷前方障礙物是牆體或階梯。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">07</span>
+          <div>
+            <span class="change-tag new">新增</span>
+            <h4>雙顏色感測器</h4>
+            <p>
+              在底盤配置兩組顏色感測器，
+              用於辨識道路標線並完成循跡巡邏。
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <span class="feature-number">08</span>
+          <div>
+            <span class="change-tag new">新增</span>
+            <h4>即時監控與控制儀表板</h4>
+            <p>
+              顯示各項感測器的即時數值與越線等違規紀錄，
+              並提供機器人控制介面，透過面板按鈕執行精細動作。
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="demo-video">
+        <div class="video-heading">
+          <span>DEMO VIDEO</span>
+          <h4>雙雷射距離感測測試</h4>
+        </div>
+
+        <video controls playsinline preload="metadata">
+          <source
+            src="assets/dual-laser-demo.mp4"
+            type="video/mp4"
+          >
+          您的瀏覽器不支援影片播放。
+        </video>
+
+        <p>透過上下兩組感測結果，辨識牆體、階梯與前方障礙物。</p>
+      </div>
+    </article>
+  </div>
+</section>
+  
   <main>
 
     <!-- 首頁主視覺 -->
