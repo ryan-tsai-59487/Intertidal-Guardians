@@ -2111,3 +2111,18 @@ header.scrolled,
     width: 100%;
   }
 }
+/* 防止架構區受到外層 Grid 或容器寬度限制 */
+.mqtt-architecture {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+}
+
+.mqtt-architecture *,
+.mqtt-architecture *::before,
+.mqtt-architecture *::after {
+  box-sizing: border-box;
+}
