@@ -658,6 +658,92 @@
       © 2026 Intertidal Guardian Project
     </p>
 
+
+  <!-- 裝置溝通架構 -->
+<section class="mqtt-architecture" id="mqtt-architecture">
+  <div class="architecture-heading">
+    <span class="architecture-kicker">SYSTEM ARCHITECTURE</span>
+    <h2>裝置溝通架構</h2>
+
+    <p>
+      系統以主電腦作為 Mosquitto MQTT Broker，
+      整合 Matrix R4、micro:bit、手機與各項感測器，
+      將巡邏資料與違規紀錄即時更新至儀表板。
+    </p>
+  </div>
+
+  <div class="architecture-tags">
+    <span class="tag mqtt-tag">
+      <i></i>
+      MQTT / Wi-Fi
+    </span>
+
+    <span class="tag wire-tag">
+      <i></i>
+      實體線路
+    </span>
+
+    <span class="tag bluetooth-tag">
+      <i></i>
+      Bluetooth
+    </span>
+  </div>
+
+  <div class="architecture-image-card">
+    <img
+      src="assets/mqtt demo pic.png"
+      alt="智慧潮間帶機器人 A 至 H 裝置溝通架構圖"
+      loading="lazy"
+    >
+
+    <div class="architecture-image-footer">
+      <div>
+        <h3>感測、傳輸與即時監控</h3>
+        <p>
+          感測資料由控制主機整合後，透過 MQTT
+          發布至主電腦，並同步更新儀表板。
+        </p>
+      </div>
+
+      <a
+        href="assets/mqtt demo pic.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="architecture-view-button"
+      >
+        查看完整架構圖
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="architecture-summary">
+    <article>
+      <span class="summary-number">01</span>
+      <div>
+        <h3>即時資料傳輸</h3>
+        <p>感測數值與違規事件透過 MQTT 傳送至主電腦。</p>
+      </div>
+    </article>
+
+    <article>
+      <span class="summary-number">02</span>
+      <div>
+        <h3>多裝置整合</h3>
+        <p>整合 Matrix R4、micro:bit、手機與環境感測器。</p>
+      </div>
+    </article>
+
+    <article>
+      <span class="summary-number">03</span>
+      <div>
+        <h3>科教館情境</h3>
+        <p>螃蟹端 micro:bit 可透過 Bluetooth 傳送違規事件。</p>
+      </div>
+    </article>
+  </div>
+</section>
+    
   </footer>
 
 
