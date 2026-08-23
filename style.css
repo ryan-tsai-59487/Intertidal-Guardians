@@ -1843,3 +1843,271 @@ header.scrolled,
     align-items: flex-start;
   }
 }
+
+/* ========================================
+   裝置溝通架構
+======================================== */
+
+.mqtt-architecture {
+  --architecture-cyan: #35d5e7;
+  --architecture-orange: #f5a45d;
+  --architecture-purple: #a98af2;
+  --architecture-bg: #04192a;
+  --architecture-card: rgba(8, 42, 61, 0.84);
+  --architecture-text: #ffffff;
+  --architecture-muted: #acc9d4;
+
+  position: relative;
+  overflow: hidden;
+  padding: 110px 6%;
+  color: var(--architecture-text);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(53, 213, 231, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #031421 0%,
+      #07344b 55%,
+      #041825 100%
+    );
+}
+
+.mqtt-architecture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(
+      rgba(53, 213, 231, 0.16) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(53, 213, 231, 0.16) 1px,
+      transparent 1px
+    );
+  background-size: 52px 52px;
+}
+
+.architecture-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.architecture-kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--architecture-cyan);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.architecture-heading h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.15;
+}
+
+.architecture-heading p {
+  margin: 0;
+  color: var(--architecture-muted);
+  font-size: 1.04rem;
+  line-height: 1.9;
+}
+
+.architecture-tags {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 38px;
+}
+
+.architecture-tags .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #dcecf1;
+  font-size: 0.86rem;
+  background: rgba(4, 27, 43, 0.72);
+}
+
+.architecture-tags .tag i {
+  display: block;
+  width: 30px;
+  height: 5px;
+  border-radius: 999px;
+}
+
+.mqtt-tag i {
+  background: var(--architecture-cyan);
+}
+
+.wire-tag i {
+  background: var(--architecture-orange);
+}
+
+.bluetooth-tag i {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--architecture-purple) 0 8px,
+    transparent 8px 13px
+  );
+}
+
+.architecture-image-card {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(53, 213, 231, 0.36);
+  border-radius: 28px;
+  background: var(--architecture-card);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(53, 213, 231, 0.08);
+}
+
+.architecture-image-card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #061d2f;
+}
+
+.architecture-image-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 24px 28px;
+  border-top: 1px solid rgba(53, 213, 231, 0.24);
+}
+
+.architecture-image-footer h3 {
+  margin: 0 0 7px;
+  font-size: 1.1rem;
+}
+
+.architecture-image-footer p {
+  margin: 0;
+  color: var(--architecture-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.architecture-view-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #031923;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: var(--architecture-cyan);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.architecture-view-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(53, 213, 231, 0.26);
+}
+
+.architecture-summary {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1320px;
+  margin: 24px auto 0;
+}
+
+.architecture-summary article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(145, 211, 224, 0.16);
+  border-radius: 18px;
+  background: rgba(7, 38, 56, 0.72);
+}
+
+.summary-number {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  color: #031923;
+  font-size: 0.8rem;
+  font-weight: 900;
+  background: var(--architecture-cyan);
+}
+
+.architecture-summary h3 {
+  margin: 0 0 7px;
+  font-size: 1rem;
+}
+
+.architecture-summary p {
+  margin: 0;
+  color: var(--architecture-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .architecture-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-image-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .mqtt-architecture {
+    padding: 80px 18px;
+  }
+
+  .architecture-image-card {
+    border-radius: 19px;
+  }
+
+  .architecture-image-card > img {
+    min-height: 310px;
+    object-fit: contain;
+  }
+
+  .architecture-image-footer {
+    padding: 20px;
+  }
+
+  .architecture-view-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
