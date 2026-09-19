@@ -16,6 +16,139 @@
   <title>潮間帶守護者｜智慧巡邏與導覽機器人</title>
 
   <link rel="stylesheet" href="./style.css?v=4">
+
+  <!-- 語言選擇功能：放在本頁，避免另外修改 style.css -->
+  <style>
+    .language-modal {
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(8, 42, 56, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .language-modal.is-hidden {
+      display: none;
+    }
+
+    .language-modal-card {
+      width: min(520px, 100%);
+      padding: 42px;
+      border: 1px solid rgba(61, 143, 138, 0.32);
+      border-radius: 28px;
+      color: #1d3d5e;
+      text-align: center;
+      background: #fffdf8;
+      box-shadow: 0 30px 80px rgba(5, 36, 49, 0.32);
+    }
+
+    .language-modal-icon {
+      margin-bottom: 12px;
+      font-size: 2.6rem;
+    }
+
+    .language-modal-kicker {
+      margin: 0 0 10px;
+      color: #3d8f8a;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .language-modal-card h2 {
+      margin: 0 0 8px;
+      color: #1d3d5e;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .language-modal-card > p:not(.language-modal-kicker) {
+      margin: 0;
+      color: #62747d;
+    }
+
+    .language-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .language-option {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 5px;
+      padding: 20px 16px;
+      border: 2px solid rgba(61, 143, 138, 0.2);
+      border-radius: 18px;
+      color: #1d3d5e;
+      cursor: pointer;
+      background: #fff;
+      transition: transform 0.2s ease, border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .language-option:hover,
+    .language-option:focus-visible {
+      transform: translateY(-3px);
+      border-color: #3d8f8a;
+      box-shadow: 0 12px 28px rgba(61, 143, 138, 0.18);
+    }
+
+    .language-option strong {
+      font-size: 1.15rem;
+    }
+
+    .language-option span {
+      color: #70848c;
+      font-size: 0.78rem;
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 7px;
+      padding: 6px 10px;
+      border: 1px solid rgba(61, 143, 138, 0.25);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .language-switcher button {
+      padding: 3px;
+      border: 0;
+      color: #60747d;
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .language-switcher button:hover,
+    .language-switcher button.is-active {
+      color: #167a7d;
+    }
+
+    @media (max-width: 600px) {
+      .language-modal-card {
+        padding: 32px 22px;
+      }
+
+      .language-options {
+        grid-template-columns: 1fr;
+      }
+
+      .language-switcher {
+        margin-left: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -276,48 +409,48 @@
         <li>
           <span class="feature-number">01</span>
           <div>
-            <h4>紅外線越線偵測</h4>
-            <p>透過紅外線感測器，判斷是否有人或物體越過警戒線。</p>
+            <h4 data-i18n="gen1Feature1Title">紅外線越線偵測</h4>
+            <p data-i18n="gen1Feature1Description">透過紅外線感測器，判斷是否有人或物體越過警戒線。</p>
           </div>
         </li>
 
         <li>
           <span class="feature-number">02</span>
           <div>
-            <h4>強光與噪音感測</h4>
-            <p>使用 micro:bit 偵測環境光線強度與聲音音量。</p>
+            <h4 data-i18n="gen1Feature2Title">強光與噪音感測</h4>
+            <p data-i18n="gen1Feature2Description">使用 micro:bit 偵測環境光線強度與聲音音量。</p>
           </div>
         </li>
 
         <li>
           <span class="feature-number">03</span>
           <div>
-            <h4>雙 EV3 控制主機</h4>
-            <p>使用兩台 EV3 主機作為機器人的主要控制系統。</p>
+            <h4 data-i18n="gen1Feature3Title">雙 EV3 控制主機</h4>
+            <p data-i18n="gen1Feature3Description">使用兩台 EV3 主機作為機器人的主要控制系統。</p>
           </div>
         </li>
 
         <li>
           <span class="feature-number">04</span>
           <div>
-            <h4>LEGO 積木軀幹</h4>
-            <p>主要結構以 LEGO 零件組裝，方便快速調整與測試。</p>
+            <h4 data-i18n="gen1Feature4Title">LEGO 積木軀幹</h4>
+            <p data-i18n="gen1Feature4Description">主要結構以 LEGO 零件組裝，方便快速調整與測試。</p>
           </div>
         </li>
 
         <li>
           <span class="feature-number">05</span>
           <div>
-            <h4>LEGO 馬達驅動</h4>
-            <p>使用 LEGO 馬達控制四肢的仰俯角度。</p>
+            <h4 data-i18n="gen1Feature5Title">LEGO 馬達驅動</h4>
+            <p data-i18n="gen1Feature5Description">使用 LEGO 馬達控制四肢的仰俯角度。</p>
           </div>
         </li>
 
         <li>
           <span class="feature-number">06</span>
           <div>
-            <h4>單一超音波感測器</h4>
-            <p>偵測機器人前方是否存在障礙物。</p>
+            <h4 data-i18n="gen1Feature6Title">單一超音波感測器</h4>
+            <p data-i18n="gen1Feature6Description">偵測機器人前方是否存在障礙物。</p>
           </div>
         </li>
       </ol>
@@ -352,9 +485,9 @@
         <li>
           <span class="feature-number">01</span>
           <div>
-            <span class="change-tag upgrade">升級</span>
-            <h4>手機影像越線辨識</h4>
-            <p>
+            <span class="change-tag upgrade" data-i18n="changeUpgrade">升級</span>
+            <h4 data-i18n="gen2Feature1Title">手機影像越線辨識</h4>
+            <p data-i18n="gen2Feature1Description">
               改用手機鏡頭辨識越線行為，並加入眨眼辨識機制。
               偵測目標必須具有眨眼特徵，才會被判定為人員越線，
               降低鳥類或其他移動物體造成誤報的情況。
@@ -365,9 +498,9 @@
         <li>
           <span class="feature-number">02</span>
           <div>
-            <span class="change-tag retained">延續</span>
-            <h4>強光與噪音感測</h4>
-            <p>
+            <span class="change-tag retained" data-i18n="changeRetained">延續</span>
+            <h4 data-i18n="gen2Feature2Title">強光與噪音感測</h4>
+            <p data-i18n="gen2Feature2Description">
               延續使用 micro:bit 偵測光照與音量，
               發現干擾行為時立即提醒遊客。
             </p>
@@ -377,9 +510,9 @@
         <li>
           <span class="feature-number">03</span>
           <div>
-            <span class="change-tag upgrade">升級</span>
-            <h4>雙 Matrix R4 控制主機</h4>
-            <p>
+            <span class="change-tag upgrade" data-i18n="changeUpgrade">升級</span>
+            <h4 data-i18n="gen2Feature3Title">雙 Matrix R4 控制主機</h4>
+            <p data-i18n="gen2Feature3Description">
               將 EV3 更換為兩台 Matrix R4 主機，
               提升控制能力與感測器整合彈性。
             </p>
@@ -389,9 +522,9 @@
         <li>
           <span class="feature-number">04</span>
           <div>
-            <span class="change-tag upgrade">升級</span>
-            <h4>金屬結構軀幹</h4>
-            <p>
+            <span class="change-tag upgrade" data-i18n="changeUpgrade">升級</span>
+            <h4 data-i18n="gen2Feature4Title">金屬結構軀幹</h4>
+            <p data-i18n="gen2Feature4Description">
               軀幹改用金屬零件連接，提升結構強度、
               穩定性與整體載重能力。
             </p>
@@ -401,9 +534,9 @@
         <li>
           <span class="feature-number">05</span>
           <div>
-            <span class="change-tag upgrade">升級</span>
-            <h4>Matrix 馬達驅動</h4>
-            <p>
+            <span class="change-tag upgrade" data-i18n="changeUpgrade">升級</span>
+            <h4 data-i18n="gen2Feature5Title">Matrix 馬達驅動</h4>
+            <p data-i18n="gen2Feature5Description">
               四肢改用 Matrix 馬達控制仰俯角度，
               提供更強的輸出力量與穩定動作。
             </p>
@@ -413,9 +546,9 @@
         <li>
           <span class="feature-number">06</span>
           <div>
-            <span class="change-tag upgrade">升級</span>
-            <h4>上下雙雷射距離感測</h4>
-            <p>
+            <span class="change-tag upgrade" data-i18n="changeUpgrade">升級</span>
+            <h4 data-i18n="gen2Feature6Title">上下雙雷射距離感測</h4>
+            <p data-i18n="gen2Feature6Description">
               兩組雷射距離感測器採上下配置，
               藉由不同高度的偵測結果，判斷前方障礙物是牆體或階梯。
             </p>
@@ -425,9 +558,9 @@
         <li>
           <span class="feature-number">07</span>
           <div>
-            <span class="change-tag new">新增</span>
-            <h4>雙顏色感測器</h4>
-            <p>
+            <span class="change-tag new" data-i18n="changeNew">新增</span>
+            <h4 data-i18n="gen2Feature7Title">雙顏色感測器</h4>
+            <p data-i18n="gen2Feature7Description">
               在底盤配置兩組顏色感測器，
               用於辨識道路標線並完成循跡巡邏。
             </p>
@@ -437,9 +570,9 @@
         <li>
           <span class="feature-number">08</span>
           <div>
-            <span class="change-tag new">新增</span>
-            <h4>即時監控與控制儀表板</h4>
-            <p>
+            <span class="change-tag new" data-i18n="changeNew">新增</span>
+            <h4 data-i18n="gen2Feature8Title">即時監控與控制儀表板</h4>
+            <p data-i18n="gen2Feature8Description">
               顯示各項感測器的即時數值與越線等違規紀錄，
               並提供機器人控制介面，透過面板按鈕執行精細動作。
             </p>
@@ -472,9 +605,9 @@
 
       <div class="section-heading">
         <p class="section-number">01 / MISSION</p>
-        <h2>為什麼潮間帶需要被守護？</h2>
+        <h2 data-i18n="missionTitle">為什麼潮間帶需要被守護？</h2>
 
-        <p>
+        <p data-i18n="missionDescription">
           潮間帶生物脆弱，遊客的無意行為，
           也可能對牠們的棲息環境造成影響。
         </p>
@@ -485,22 +618,22 @@
         <article class="info-card">
           <span class="card-number">01</span>
           <div class="card-icon">LIGHT</div>
-          <h3>強光干擾</h3>
-          <p>閃光燈與過強光線可能影響潮間帶生物作息。</p>
+          <h3 data-i18n="strongLight">強光干擾</h3>
+          <p data-i18n="strongLightDescription">閃光燈與過強光線可能影響潮間帶生物作息。</p>
         </article>
 
         <article class="info-card">
           <span class="card-number">02</span>
           <div class="card-icon">SOUND</div>
-          <h3>噪音干擾</h3>
-          <p>喧嘩與高音量可能驚擾正在活動或躲藏的生物。</p>
+          <h3 data-i18n="noise">噪音干擾</h3>
+          <p data-i18n="noiseDescription">喧嘩與高音量可能驚擾正在活動或躲藏的生物。</p>
         </article>
 
         <article class="info-card">
           <span class="card-number">03</span>
           <div class="card-icon">STEP</div>
-          <h3>踩踏與越線</h3>
-          <p>誤闖保護區域可能破壞生物棲地與潮池環境。</p>
+          <h3 data-i18n="crossing">踩踏與越線</h3>
+          <p data-i18n="crossingDescription">誤闖保護區域可能破壞生物棲地與潮池環境。</p>
         </article>
 
       </div>
@@ -513,34 +646,34 @@
 
       <div class="section-heading">
         <p class="section-number">02 / TECHNOLOGY</p>
-        <h2>智慧巡邏核心功能</h2>
-        <p>讓機器人成為遊客與潮間帶生態之間的友善守護者。</p>
+        <h2 data-i18n="featuresTitle">智慧巡邏核心功能</h2>
+        <p data-i18n="featuresDescription">讓機器人成為遊客與潮間帶生態之間的友善守護者。</p>
       </div>
 
       <div class="feature-grid">
 
         <article class="feature-card">
           <span class="feature-index">01</span>
-          <h3>環境感測</h3>
-          <p>偵測現場光照強度與聲音變化，掌握環境狀況。</p>
+          <h3 data-i18n="environmentSensing">環境感測</h3>
+          <p data-i18n="environmentDescription">偵測現場光照強度與聲音變化，掌握環境狀況。</p>
         </article>
 
         <article class="feature-card">
           <span class="feature-index">02</span>
-          <h3>影像辨識</h3>
-          <p>透過攝影機辨識遊客行為與保護區域狀態。</p>
+          <h3 data-i18n="imageRecognition">影像辨識</h3>
+          <p data-i18n="imageDescription">透過攝影機辨識遊客行為與保護區域狀態。</p>
         </article>
 
         <article class="feature-card">
           <span class="feature-index">03</span>
-          <h3>履帶巡邏</h3>
-          <p>利用履帶式底盤適應展示場域及不平整路面。</p>
+          <h3 data-i18n="trackedPatrol">履帶巡邏</h3>
+          <p data-i18n="trackedDescription">利用履帶式底盤適應展示場域及不平整路面。</p>
         </article>
 
         <article class="feature-card">
           <span class="feature-index">04</span>
-          <h3>語音提醒</h3>
-          <p>偵測異常時，以清楚、溫和的語音提醒遊客。</p>
+          <h3 data-i18n="voiceAlert">語音提醒</h3>
+          <p data-i18n="voiceDescription">偵測異常時，以清楚、溫和的語音提醒遊客。</p>
         </article>
 
       </div>
@@ -553,24 +686,24 @@
 
       <div class="section-heading">
         <p class="section-number">03 / FRIENDLY ALERT</p>
-        <h2>即時偵測，友善提醒</h2>
+        <h2 data-i18n="alertsTitle">即時偵測，友善提醒</h2>
       </div>
 
       <div class="alert-grid">
 
         <div class="alert-card alert-light">
-          <span>光照過強</span>
-          <strong>「請關閉閃光燈」</strong>
+          <span data-i18n="lightTooStrong">光照過強</span>
+          <strong data-i18n="turnOffFlash">「請關閉閃光燈」</strong>
         </div>
 
         <div class="alert-card alert-sound">
-          <span>音量過大</span>
-          <strong>「請小聲一點，保護生物的家」</strong>
+          <span data-i18n="volumeTooHigh">音量過大</span>
+          <strong data-i18n="keepQuiet">「請小聲一點，保護生物的家」</strong>
         </div>
 
         <div class="alert-card alert-boundary">
-          <span>遊客越線</span>
-          <strong>「請勿越過此區，這裡是生物們的家！」</strong>
+          <span data-i18n="visitorCrossing">遊客越線</span>
+          <strong data-i18n="stayBehindLine">「請勿越過此區，這裡是生物們的家！」</strong>
         </div>
 
       </div>
@@ -585,14 +718,14 @@
 
         <div class="elder-text">
           <p class="section-number">04 / LOCAL WISDOM</p>
-          <h2>耆老智慧導覽模式</h2>
+          <h2 data-i18n="wisdomTitle">耆老智慧導覽模式</h2>
 
-          <p>
+          <p data-i18n="wisdomDescriptionOne">
             最熟悉潮間帶生態與地方故事的，往往是長年居住在當地的耆老。
             機器人能作為遠端導覽媒介，協助傳遞珍貴的在地知識。
           </p>
 
-          <p>
+          <p data-i18n="wisdomDescriptionTwo">
             當口語表達較不清楚時，系統可以透過 AI 理解語意、
             重組句子，再由機器人以清楚的語音向遊客播報。
           </p>
@@ -602,21 +735,21 @@
 
           <div class="flow-node">
             <span>01</span>
-            <strong>在地耆老分享</strong>
+            <strong data-i18n="wisdomStepOne">在地耆老分享</strong>
           </div>
 
           <div class="flow-line"></div>
 
           <div class="flow-node">
             <span>02</span>
-            <strong>AI 理解語意</strong>
+            <strong data-i18n="wisdomStepTwo">AI 理解語意</strong>
           </div>
 
           <div class="flow-line"></div>
 
           <div class="flow-node">
             <span>03</span>
-            <strong>機器人語音導覽</strong>
+            <strong data-i18n="wisdomStepThree">機器人語音導覽</strong>
           </div>
 
         </div>
@@ -631,33 +764,33 @@
 
       <div class="section-heading">
         <p class="section-number">05 / WORKFLOW</p>
-        <h2>智慧巡邏運作流程</h2>
+        <h2 data-i18n="processTitle">智慧巡邏運作流程</h2>
       </div>
 
       <div class="process-list">
 
         <div class="process-item">
           <span>01</span>
-          <h3>環境感測</h3>
-          <p>接收光照、音量、距離與影像資訊。</p>
+          <h3 data-i18n="processSensing">環境感測</h3>
+          <p data-i18n="processSensingDescription">接收光照、音量、距離與影像資訊。</p>
         </div>
 
         <div class="process-item">
           <span>02</span>
-          <h3>智慧判斷</h3>
-          <p>判斷是否超過設定門檻或出現越線行為。</p>
+          <h3 data-i18n="processDecision">智慧判斷</h3>
+          <p data-i18n="processDecisionDescription">判斷是否超過設定門檻或出現越線行為。</p>
         </div>
 
         <div class="process-item">
           <span>03</span>
-          <h3>語音提醒</h3>
-          <p>播放符合現場情況的友善提醒。</p>
+          <h3 data-i18n="processAlert">語音提醒</h3>
+          <p data-i18n="processAlertDescription">播放符合現場情況的友善提醒。</p>
         </div>
 
         <div class="process-item">
           <span>04</span>
-          <h3>事件記錄</h3>
-          <p>將事件資料提供給專案儀表板進行分析。</p>
+          <h3 data-i18n="processRecord">事件記錄</h3>
+          <p data-i18n="processRecordDescription">將事件資料提供給專案儀表板進行分析。</p>
         </div>
 
       </div>
@@ -670,9 +803,9 @@
 
       <div class="section-heading">
         <p class="section-number">06 / DATA</p>
-        <h2>以數據看見守護成果</h2>
+        <h2 data-i18n="dataTitle">以數據看見守護成果</h2>
 
-        <p>
+        <p data-i18n="dataDescription">
           記錄強光、噪音、越線與巡邏事件，
           協助團隊分析遊客行為與教育成效。
         </p>
@@ -682,22 +815,22 @@
 
         <div class="data-card">
           <span class="data-value" data-target="0">0</span>
-          <small>強光事件</small>
+          <small data-i18n="lightEvents">強光事件</small>
         </div>
 
         <div class="data-card">
           <span class="data-value" data-target="0">0</span>
-          <small>噪音事件</small>
+          <small data-i18n="noiseEvents">噪音事件</small>
         </div>
 
         <div class="data-card">
           <span class="data-value" data-target="0">0</span>
-          <small>越線事件</small>
+          <small data-i18n="crossingEvents">越線事件</small>
         </div>
 
         <div class="data-card">
           <span class="data-value" data-target="0">0</span>
-          <small>事件總計</small>
+          <small data-i18n="totalEvents">事件總計</small>
         </div>
 
       </div>
@@ -710,27 +843,27 @@
 
       <div class="section-heading">
         <p class="section-number">07 / FUTURE PLAN</p>
-        <h2>守護更大的海岸線</h2>
+        <h2 data-i18n="futureTitle">守護更大的海岸線</h2>
       </div>
 
       <div class="future-grid">
 
         <article>
           <span>01</span>
-          <h3>擴增感測項目</h3>
-          <p>加入溫濕度、水質與更多影像辨識功能。</p>
+          <h3 data-i18n="futureSensing">擴增感測項目</h3>
+          <p data-i18n="futureSensingDescription">加入溫濕度、水質與更多影像辨識功能。</p>
         </article>
 
         <article>
           <span>02</span>
-          <h3>擴大教育合作</h3>
-          <p>與更多學校、社區及生態保育團體合作。</p>
+          <h3 data-i18n="futureEducation">擴大教育合作</h3>
+          <p data-i18n="futureEducationDescription">與更多學校、社區及生態保育團體合作。</p>
         </article>
 
         <article>
           <span>03</span>
-          <h3>建立生態資料平台</h3>
-          <p>累積潮間帶環境與遊客行為資料，支持教育研究。</p>
+          <h3 data-i18n="futurePlatform">建立生態資料平台</h3>
+          <p data-i18n="futurePlatformDescription">累積潮間帶環境與遊客行為資料，支持教育研究。</p>
         </article>
 
       </div>
@@ -743,9 +876,9 @@
 <section class="mqtt-architecture" id="mqtt-architecture">
   <div class="architecture-heading">
     <span class="architecture-kicker">SYSTEM ARCHITECTURE</span>
-    <h2>裝置溝通架構</h2>
+    <h2 data-i18n="architectureTitle">裝置溝通架構</h2>
 
-    <p>
+    <p data-i18n="architectureDescription">
       系統以主電腦作為 Mosquitto MQTT Broker，
       整合 Matrix R4、micro:bit、手機與各項感測器，
       將巡邏資料與違規紀錄即時更新至儀表板。
@@ -760,7 +893,7 @@
 
     <span class="tag wire-tag">
       <i></i>
-      實體線路
+      <span data-i18n="physicalWiring">實體線路</span>
     </span>
 
     <span class="tag bluetooth-tag">
@@ -778,8 +911,8 @@
 
     <div class="architecture-image-footer">
       <div>
-        <h3>感測、傳輸與即時監控</h3>
-        <p>
+        <h3 data-i18n="architectureMonitorTitle">感測、傳輸與即時監控</h3>
+        <p data-i18n="architectureMonitorDescription">
           感測資料由控制主機整合後，透過 MQTT
           發布至主電腦，並同步更新儀表板。
         </p>
@@ -791,7 +924,7 @@
         rel="noopener noreferrer"
         class="architecture-view-button"
       >
-        查看完整架構圖
+        <span data-i18n="viewArchitecture">查看完整架構圖</span>
         <span aria-hidden="true">↗</span>
       </a>
     </div>
@@ -801,24 +934,24 @@
     <article>
       <span class="summary-number">01</span>
       <div>
-        <h3>即時資料傳輸</h3>
-        <p>感測數值與違規事件透過 MQTT 傳送至主電腦。</p>
+        <h3 data-i18n="realtimeTransmission">即時資料傳輸</h3>
+        <p data-i18n="realtimeTransmissionDescription">感測數值與違規事件透過 MQTT 傳送至主電腦。</p>
       </div>
     </article>
 
     <article>
       <span class="summary-number">02</span>
       <div>
-        <h3>多裝置整合</h3>
-        <p>整合 Matrix R4、micro:bit、手機與環境感測器。</p>
+        <h3 data-i18n="deviceIntegration">多裝置整合</h3>
+        <p data-i18n="deviceIntegrationDescription">整合 Matrix R4、micro:bit、手機與環境感測器。</p>
       </div>
     </article>
 
     <article>
       <span class="summary-number">03</span>
       <div>
-        <h3>科教館情境</h3>
-        <p>螃蟹端 micro:bit 可透過 Bluetooth 傳送違規事件。</p>
+        <h3 data-i18n="museumScenario">科教館情境</h3>
+        <p data-i18n="museumScenarioDescription">螃蟹端 micro:bit 可透過 Bluetooth 傳送違規事件。</p>
       </div>
     </article>
   </div>
@@ -827,11 +960,11 @@
   <footer class="site-footer">
 
     <div>
-      <strong>潮間帶守護者</strong>
-      <p>智慧潮間帶巡邏與導覽機器人</p>
+      <strong data-i18n="brandName">潮間帶守護者</strong>
+      <p data-i18n="footerSubtitle">智慧潮間帶巡邏與導覽機器人</p>
     </div>
 
-    <p>
+    <p data-i18n="footerMessage">
       科技守護潮間帶，從我們做起。
     </p>
 
@@ -846,6 +979,205 @@
 
 
   <script src="script.js"></script>
+
+  <!-- 完整中英文切換功能 -->
+  <script>
+    (() => {
+      const englishTranslations = {
+        brandName: "Intertidal Guardian",
+        navMission: "Mission",
+        navFeatures: "Features",
+        navWisdom: "Local Wisdom",
+        navProcess: "Workflow",
+        navFuture: "Future Plans",
+        heroTitleOne: "Smart Intertidal",
+        heroTitleTwo: "Patrol & Guide Robot",
+        heroDescription: "Combining environmental sensing, image recognition, voice alerts, and local knowledge to protect the intertidal zone and help visitors coexist with nature.",
+        exploreFeatures: "Explore Robot Features",
+        viewData: "View Project Data",
+        tagEcology: "Ecological Protection",
+        tagWisdom: "Local Wisdom",
+        tagInnovation: "Technology Innovation",
+        tagSustainability: "Sustainable Future",
+        sensorLight: "Light Sensing",
+        sensorSound: "Sound Detection",
+        sensorCamera: "Image Recognition",
+        scrollDown: "Explore More",
+        evolutionTitle: "From Generation One to Generation Two",
+        evolutionDescription: "Evolving from basic environmental sensing into a smart patrol robot with image recognition, line following, obstacle classification, and a real-time dashboard.",
+        generationOne: "Generation One",
+        generationOneTitle: "Basic Environmental Sensing Prototype",
+        prototypeStatus: "Prototype Validation",
+        gen1Feature1Title: "Infrared Boundary Detection",
+        gen1Feature1Description: "Infrared sensors detect whether a person or object crosses the safety boundary.",
+        gen1Feature2Title: "Light and Noise Sensing",
+        gen1Feature2Description: "A micro:bit detects ambient light intensity and sound levels.",
+        gen1Feature3Title: "Dual EV3 Controllers",
+        gen1Feature3Description: "Two EV3 units serve as the robot's main control system.",
+        gen1Feature4Title: "LEGO Brick Chassis",
+        gen1Feature4Description: "The main structure is built with LEGO parts for quick adjustment and testing.",
+        gen1Feature5Title: "LEGO Motor Drive",
+        gen1Feature5Description: "LEGO motors control the pitch angles of the robot's limbs.",
+        gen1Feature6Title: "Single Ultrasonic Sensor",
+        gen1Feature6Description: "Detects obstacles in front of the robot.",
+        fullUpgrade: "Complete Upgrade",
+        generationTwo: "Generation Two",
+        generationTwoTitle: "Smart Recognition Patrol System",
+        smartUpgrade: "Smart Upgrade",
+        changeUpgrade: "UPGRADED",
+        changeRetained: "RETAINED",
+        changeNew: "NEW",
+        gen2Feature1Title: "Smartphone Boundary Recognition",
+        gen2Feature1Description: "A smartphone camera detects boundary crossings and verifies blinking. A target is identified as a person only when blinking is detected, reducing false alarms caused by birds or other moving objects.",
+        gen2Feature2Title: "Light and Noise Sensing",
+        gen2Feature2Description: "The micro:bit continues to monitor light and sound levels and immediately reminds visitors when disruptive behavior is detected.",
+        gen2Feature3Title: "Dual Matrix R4 Controllers",
+        gen2Feature3Description: "Two Matrix R4 controllers replace the EV3 units, improving control performance and sensor integration flexibility.",
+        gen2Feature4Title: "Metal Structural Chassis",
+        gen2Feature4Description: "Metal connecting parts improve structural strength, stability, and overall load capacity.",
+        gen2Feature5Title: "Matrix Motor Drive",
+        gen2Feature5Description: "Matrix motors control the pitch angles of the four limbs, providing greater power and more stable movement.",
+        gen2Feature6Title: "Dual Laser Distance Sensing",
+        gen2Feature6Description: "Two vertically arranged laser distance sensors compare readings at different heights to distinguish walls from stairs.",
+        gen2Feature7Title: "Dual Color Sensors",
+        gen2Feature7Description: "Two color sensors under the chassis detect road markings and enable line-following patrols.",
+        gen2Feature8Title: "Real-Time Monitoring and Control Dashboard",
+        gen2Feature8Description: "The dashboard displays live sensor readings and violation records, and provides controls for precise robot movements.",
+        laserDemoTitle: "Dual Laser Distance Sensor Test",
+        laserDemoDescription: "The upper and lower sensor readings identify walls, stairs, and obstacles ahead.",
+        missionTitle: "Why Protect the Intertidal Zone?",
+        missionDescription: "Intertidal wildlife is fragile, and even unintentional visitor behavior can affect its natural habitat.",
+        strongLight: "Strong Light",
+        strongLightDescription: "Flash photography and excessive light may disturb the daily rhythms of intertidal wildlife.",
+        noise: "Noise",
+        noiseDescription: "Loud voices and high sound levels may disturb active or hiding wildlife.",
+        crossing: "Stepping and Boundary Crossing",
+        crossingDescription: "Entering protected areas may damage habitats and tide-pool environments.",
+        featuresTitle: "Smart Patrol Features",
+        featuresDescription: "Helping the robot become a friendly guardian between visitors and intertidal ecosystems.",
+        environmentSensing: "Environment Sensing",
+        environmentDescription: "Monitors light intensity and sound changes to understand environmental conditions.",
+        imageRecognition: "Image Recognition",
+        imageDescription: "Uses a camera to recognize visitor behavior and protected-area conditions.",
+        trackedPatrol: "Tracked Patrol",
+        trackedDescription: "The tracked chassis adapts to exhibition spaces and uneven surfaces.",
+        voiceAlert: "Voice Alerts",
+        voiceDescription: "Provides clear and friendly voice reminders when unusual behavior is detected.",
+        alertsTitle: "Real-Time Detection, Friendly Reminders",
+        lightTooStrong: "Excessive Light",
+        turnOffFlash: "Please turn off the flash.",
+        volumeTooHigh: "Excessive Noise",
+        keepQuiet: "Please keep your voice down and protect wildlife habitats.",
+        visitorCrossing: "Boundary Crossing",
+        stayBehindLine: "Please stay behind the boundary. This is wildlife's home!",
+        wisdomTitle: "Local Elder Wisdom Guide",
+        wisdomDescriptionOne: "Local elders who have lived in the area for many years often know its intertidal ecology and stories best. The robot can serve as a remote guide and help share valuable local knowledge.",
+        wisdomDescriptionTwo: "When spoken explanations are unclear, AI can understand the meaning, reorganize the sentences, and let the robot present them clearly to visitors.",
+        wisdomStepOne: "Local Elders Share",
+        wisdomStepTwo: "AI Understands the Meaning",
+        wisdomStepThree: "Robot Voice Guide",
+        processTitle: "Smart Patrol Workflow",
+        processSensing: "Environment Sensing",
+        processSensingDescription: "Collects light, sound, distance, and image information.",
+        processDecision: "Smart Analysis",
+        processDecisionDescription: "Determines whether thresholds are exceeded or a boundary crossing occurs.",
+        processAlert: "Voice Alert",
+        processAlertDescription: "Plays a friendly reminder suited to the situation.",
+        processRecord: "Event Recording",
+        processRecordDescription: "Sends event data to the project dashboard for analysis.",
+        dataTitle: "See Protection Results Through Data",
+        dataDescription: "Records strong-light, noise, boundary-crossing, and patrol events to help the team evaluate visitor behavior and educational impact.",
+        lightEvents: "Strong-Light Events",
+        noiseEvents: "Noise Events",
+        crossingEvents: "Boundary-Crossing Events",
+        totalEvents: "Total Events",
+        futureTitle: "Protecting More Coastlines",
+        futureSensing: "Expand Sensing Capabilities",
+        futureSensingDescription: "Add temperature, humidity, water-quality, and additional image-recognition functions.",
+        futureEducation: "Expand Educational Partnerships",
+        futureEducationDescription: "Work with more schools, communities, and conservation organizations.",
+        futurePlatform: "Build an Ecological Data Platform",
+        futurePlatformDescription: "Collect intertidal environmental and visitor-behavior data to support education and research.",
+        architectureTitle: "Device Communication Architecture",
+        architectureDescription: "The main computer serves as the Mosquitto MQTT broker, integrating Matrix R4 controllers, micro:bits, smartphones, and sensors while updating patrol data and violation records on the dashboard in real time.",
+        physicalWiring: "Physical Wiring",
+        architectureMonitorTitle: "Sensing, Communication, and Real-Time Monitoring",
+        architectureMonitorDescription: "The controllers integrate sensor data, publish it to the main computer through MQTT, and update the dashboard in real time.",
+        viewArchitecture: "View Full Architecture",
+        realtimeTransmission: "Real-Time Data Transmission",
+        realtimeTransmissionDescription: "Sensor readings and violation events are transmitted to the main computer through MQTT.",
+        deviceIntegration: "Multi-Device Integration",
+        deviceIntegrationDescription: "Integrates Matrix R4 controllers, micro:bits, smartphones, and environmental sensors.",
+        museumScenario: "Science Museum Scenario",
+        museumScenarioDescription: "The crab-side micro:bit can transmit violation events through Bluetooth.",
+        footerSubtitle: "Smart Intertidal Patrol & Guide Robot",
+        footerMessage: "Protecting the intertidal zone through technology starts with us."
+      };
+
+      const modal = document.getElementById("language-modal");
+      const translatedElements = document.querySelectorAll("[data-i18n]");
+      const choiceButtons = document.querySelectorAll("[data-language]");
+      const switchButtons = document.querySelectorAll("[data-switch-language]");
+
+      translatedElements.forEach((element) => {
+        element.dataset.zhText = element.textContent.trim();
+      });
+
+      function applyLanguage(language) {
+        const useEnglish = language === "en";
+
+        translatedElements.forEach((element) => {
+          const key = element.dataset.i18n;
+          const nextText = useEnglish
+            ? englishTranslations[key]
+            : element.dataset.zhText;
+
+          if (nextText !== undefined) {
+            element.textContent = nextText;
+          }
+        });
+
+        document.documentElement.lang = useEnglish ? "en" : "zh-Hant";
+        document.title = useEnglish
+          ? "Intertidal Guardian | Smart Patrol & Guide Robot"
+          : "潮間帶守護者｜智慧巡邏與導覽機器人";
+
+        const description = document.querySelector('meta[name="description"]');
+        if (description) {
+          description.content = useEnglish
+            ? "A smart intertidal patrol and guide robot combining environmental sensing, image recognition, voice alerts, and local knowledge."
+            : "智慧潮間帶巡邏與導覽機器人，結合環境感測、影像辨識、語音提醒與在地耆老智慧導覽。";
+        }
+
+        localStorage.setItem("intertidalLanguage", language);
+        modal.classList.add("is-hidden");
+        modal.setAttribute("aria-hidden", "true");
+
+        switchButtons.forEach((button) => {
+          const isActive = button.dataset.switchLanguage === language;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      }
+
+      choiceButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          applyLanguage(button.dataset.language);
+        });
+      });
+
+      switchButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          applyLanguage(button.dataset.switchLanguage);
+        });
+      });
+
+      const savedLanguage = localStorage.getItem("intertidalLanguage");
+      if (savedLanguage === "en" || savedLanguage === "zh-Hant") {
+        applyLanguage(savedLanguage);
+      }
+    })();
+  </script>
 
 </body>
 </html>
